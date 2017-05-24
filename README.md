@@ -1,4 +1,4 @@
-# Project2
+MagLook
 
 PROJECT REQUIREMENTS:
     1. Node and Express web server
