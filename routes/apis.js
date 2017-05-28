@@ -13,38 +13,38 @@ let newsapi = new NewsAPI('31a06e480ed04534bc2eda6adfb8fc5f');
 
 
 var helpers = require('handlebars-helpers')();
-module.exports = function(app) {
-// Routes
-// =============================================================
+// module.exports = function(app) {
+// // Routes
+// // =============================================================
 
 
-    app.get("/api/articles/entertainment-weekly", function(req, res) {
+//     app.get("/api/articles/entertainment-weekly", function(req, res) {
 
 
 
-        newsapi.articles({
-            source: 'entertainment-weekly', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+//         newsapi.articles({
+//             source: 'entertainment-weekly', // required 
+//             sortBy: 'top' // optional 
+//         }).then(articlesResponse => {
+//             console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "celebrities";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles
+//             articlesResponse.articles.forEach(el => {
+//                 el.image_url = el.urlToImage;
+//                 el.description = el.title;
+//                 el.category = "celebrities";
+//             })
+//             db.Article.bulkCreate(
+//                 articlesResponse.articles
 
-            ).then(function(dbTodo1) {
-                console.log('60: ', dbTodo1)
+//             ).then(function(dbTodo1) {
+//                 console.log('60: ', dbTodo1)
 
-                res.json(dbTodo1);
-            }).catch(err => console.log(err));
-        });
+//                 res.json(dbTodo1);
+//             }).catch(err => console.log(err));
+//         });
 
-    });
+//     });
 
     // app.get("/api/articles/mtv-news", function(req, res) {
 
