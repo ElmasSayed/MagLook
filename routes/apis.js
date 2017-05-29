@@ -13,7 +13,7 @@ let newsapi = new NewsAPI('31a06e480ed04534bc2eda6adfb8fc5f');
 
 
 var helpers = require('handlebars-helpers')();
-// module.exports = function(app) {
+module.exports = function(app) {
 // // Routes
 // // =============================================================
 
@@ -22,30 +22,193 @@ var helpers = require('handlebars-helpers')();
 
 
 
-//         newsapi.articles({
-//             source: 'entertainment-weekly', // required 
-//             sortBy: 'top' // optional 
-//         }).then(articlesResponse => {
-//             console.log(articlesResponse);
+        newsapi.articles({
+            source: 'entertainment-weekly', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
 
 
-//             articlesResponse.articles.forEach(el => {
-//                 el.image_url = el.urlToImage;
-//                 el.description = el.title;
-//                 el.category = "celebrities";
-//             })
-//             db.Article.bulkCreate(
-//                 articlesResponse.articles
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "celebrities";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
 
-//             ).then(function(dbTodo1) {
-//                 console.log('60: ', dbTodo1)
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
 
-//                 res.json(dbTodo1);
-//             }).catch(err => console.log(err));
-//         });
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
 
-//     });
+    });
 
+        newsapi.articles({
+            source: 'mtv-news', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "celebrities";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    });        
+
+        newsapi.articles({
+            source: 'cnn', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "news";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    });
+        newsapi.articles({
+            source: 'nyt', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "news";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    }); 
+        newsapi.articles({
+            source: 'espn', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "sports";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    });     
+        newsapi.articles({
+            source: 'fs', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "sports";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    }); 
+        newsapi.articles({
+            source: 'techcrunch', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "technology";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    });    
+
+        newsapi.articles({
+            source: 'engadget', // required 
+            sortBy: 'top' // optional 
+        }).then(articlesResponse => {
+            console.log(articlesResponse);
+
+
+            articlesResponse.articles.forEach(el => {
+                el.image_url = el.urlToImage;
+                el.description = el.title;
+                el.category = "technology";
+            })
+            db.Article.bulkCreate(
+                articlesResponse.articles)
+
+            // ).then(function(dbTodo1) {
+            //     console.log('60: ', dbTodo1)
+
+            //     res.json(dbTodo1);
+            // }).catch(err => console.log(err));
+        // });
+
+    });             
     // app.get("/api/articles/mtv-news", function(req, res) {
 
 
