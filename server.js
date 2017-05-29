@@ -18,6 +18,9 @@ app.use(methodOverride("_method"));
 //require("apis.js")(app);
 
 require("./routes/apis.js")(app);
+require("./routes/profile.js")(app);
+require("./routes/login.js")(app);
+
 var router = require('./controllers/MagLook_controller.js');
 
 app.use('/', router);
