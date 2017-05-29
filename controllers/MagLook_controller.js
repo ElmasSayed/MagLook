@@ -28,6 +28,7 @@ router.get("/celebrities", function(req, res) {
     }).then(function(dbArticle) {
         // console.log(dbArticle)
         var hbsObject = {
+            pageTitle: "Celebrities",
             articles: dbArticle
         };
         // We have access to the todos as an argument inside of the callback function
@@ -49,6 +50,7 @@ router.get("/news", function(req, res) {
     }).then(function(dbArticle) {
         // console.log(dbArticle)
         var hbsObject = {
+            pageTitle: "News",
             articles: dbArticle
         };
         // We have access to the todos as an argument inside of the callback function
@@ -71,6 +73,7 @@ router.get("/sports", function(req, res) {
     }).then(function(dbArticle) {
         // console.log(dbArticle)
         var hbsObject = {
+            pageTitle: "Sports",
             articles: dbArticle
         };
         // We have access to the todos as an argument inside of the callback function
@@ -93,6 +96,7 @@ router.get("/tech", function(req, res) {
     }).then(function(dbArticle) {
         // console.log(dbArticle)
         var hbsObject = {
+            pageTitle: "Technology",
             articles: dbArticle
         };
         // We have access to the todos as an argument inside of the callback function

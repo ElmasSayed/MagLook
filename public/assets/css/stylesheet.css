@@ -11,9 +11,15 @@
     width: 70px;
     margin-left: 50px;
     border: solid;
-    border-color: yellow;
-    border-width: 1px;
+    border-color: white;
+    border-width: .5px;
     border-radius: 3px;
+}
+
+.logo-title {
+    padding-top: 50px;
+    color: white;
+    font-size: 30px;
 }
 
 #bigLogo {
@@ -23,12 +29,6 @@
     width: 200px;
     height: 200px;
     display: none;
-}
-
-.logo-title {
-    padding-top: 50px;
-    color: white;
-    font-size: 30px;
 }
 
 .signup {
@@ -43,19 +43,16 @@
     border-radius: 1px;
 }
 
-.secondRow {
-    margin-top: 25px;
-}
-
 .category-title {
     color: #bbbbbb;
     font-size: 20px;
 }
 
-.links {
-    /*padding-top:40px;*/
-    /*color: black;*/
-}
+
+/*.links {
+    padding-top:40px;
+    color: black;
+}*/
 
 .article {
     width: 250px;
@@ -74,6 +71,10 @@
     border-width: .5px;
     border-radius: 5px;
     margin-bottom: 30px;
+}
+
+.article a:hover {
+    margin-top: 10px;
 }
 
 .article-img {
