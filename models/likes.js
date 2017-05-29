@@ -7,13 +7,13 @@ module.exports = function(sequelize, DataTypes) {
           // An Article (foreignKey) is required or a Like can't be made
           Like.hasMany(models.Article, {
             foreignKey: {
-              allowNull: false
+              allowNull: true
             }
           }),
           // An User (foreignKey) is required or a Like can't be made          
           Like.hasMany(models.User, {
             foreignKey: {
-              allowNull: false
+              allowNull: true
             }
           });
         }

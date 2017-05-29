@@ -178,7 +178,7 @@ box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.54);
 </head>
 <body>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
-<link href='style.css' rel='stylesheet' type='text/css'>
+
 
 <div class="container">
   <div class="row login_box">
@@ -198,24 +198,28 @@ box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.54);
                  125651 <br/> <span>FOLLOWERS</span>
             </h3>
         </div>
-        
+
         <div class="col-md-12 col-xs-12 login_control">
-                
+            <form action="/login" method="POST">     
                 <div class="control">
                     <div class="label">Email Address</div>
-                    <input type="text" class="form-control" value="admin@gmail.com"/>
+                    <input type="text" class="form-control" name = "email_address"/>
                 </div>
                 
                 <div class="control">
                      <div class="label">Password</div>
-                    <input type="password" class="form-control" value="123456"/>
+                    <input type="text" class="form-control" name = "password"/>
                 </div>
+                <div class="control">
+                     <div class="label">Image URL</div>
+                    <input type="text" class="form-control" name = "picture"/>
+                </div>                
                 <div align="center">
                      <button class="btn btn-orange">LOGIN</button>
                 </div>
-                
+            </form>    
         </div>
-        
+
         
             
     </div>

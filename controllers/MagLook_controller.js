@@ -31,7 +31,7 @@ router.get("/celebrities", function(req, res) {
       articles: dbArticle
     };      
       // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Celebrities </h1>");
+      // res.send("<h1> Celebrities </h1>");
       res.render("index", hbsObject);
     });
 
@@ -52,7 +52,7 @@ router.get("/news", function(req, res) {
       articles: dbArticle
     };      
       // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> News </h1>");      
+      // res.send("<h1> News </h1>");      
       res.render("index", hbsObject);
     });
 
@@ -74,7 +74,7 @@ router.get("/sports", function(req, res) {
       articles: dbArticle
     };      
       // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Sports </h1>");      
+      // res.send("<h1> Sports </h1>");      
       res.render("index", hbsObject);
     });
 
@@ -96,29 +96,14 @@ router.get("/tech", function(req, res) {
       articles: dbArticle
     };      
       // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Technology </h1>");
+      // res.send("<h1> Technology </h1>");
       res.render("index", hbsObject);
 
     });
 
 });
 
-// Create all our routes and set up logic within those routes where required.
-router.post("/", function(req, res) {
-    // console.log(req);
-    // console.log(res);
-    db.User.create({
-      email_address: req.body.email_address,
-      password: req.body.password,
-      picture: req.body.picture 
-    }).then(function(dbUser) {
 
-    res.redirect("/");
-    
-    });      
-
-
-});
 
 
 // Export routes for server.js to use.
