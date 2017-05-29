@@ -1,7 +1,7 @@
 
 <div class="container">
         <div class="container-fluid">
-            <div class="row" style="text-align:center">{{pageTitle}}</div>
+            <div class="row subject-page-title">{{pageTitle}}</div>
             <div class="row">
                 {{!--<div class="col-md-12">
                     <ul class="nav nav-tabs">
@@ -19,11 +19,14 @@
 
    
             {{#each articles}}                        
-                        <div id = "article">
-                            <a href= "{{this.url}}" target="_blank">
-                                <img src= "{{this.image_url}}">
-                                <p>{{this.description}}</p> 
+                        <div id="article" class="subject-article-box">
+                            <a href= "{{this.url}}" target="_blank" class="subject-article-link">
+                                <img src= "{{this.image_url}}" class="subject-article-img">
+                                <p class="subject-article-description">{{this.description}}</p> 
                             </a>
+                            <a href="/like/:{{id}}">
+								<img class="article-heart" src="http://www.freeiconspng.com/uploads/heart-png-15.png"/>
+							</a>
                         </div> 
               {{/each}}   
 

@@ -85,8 +85,8 @@
 }
 
 .article-description {
-    margin: 15px 15px 15px 15px;
-    width: 100%;
+    margin: 10px 10px 10px 10px;
+    width: 95%;
     font-size: 1.0em;
     color: white;
 }
@@ -105,24 +105,13 @@
 }
 
 .article-heart {
-    margin-top: 40px;
+    margin-top: 10px;
     height: 20px;
     width: 20px;
     opacity: .4;
-    /*border: solid;
-    border-color: yellow;
-    border-radius: 50%;*/
 }
 
-.hearts {
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-
-.findMore {
+.find-more {
     text-align: center;
     font-style: bold;
     color: white;
@@ -131,11 +120,74 @@
     margin-bottom: 10px;
 }
 
-.pageTitle {
+.subject-page-title {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 5px;
 }
+
+.subject-article-box {
+    border: solid;
+    border-color: #c0c0c0;
+    /*box-shadow: 1px 1px 1px #dadada;*/
+    border-width: .5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+    width: 350px;
+    height: 340px;
+    float: left;
+}
+
+.subject-article-box a:hover {
+    text-decoration: none;
+    /*color: lightcoral;*/
+    cursor: pointer;
+    /*margin-top: 10px;*/
+}
+
+.subject-article-img {
+    margin: 5px 10px 10px 10px;
+    width: 95%;
+    height: 200px;
+}
+
+.subject-article-description {
+    margin-left: 15px;
+    width: 90%;
+    font-size: 1.0em;
+    color: white;
+}
+
+
+/*vince-subject page*/
+
+
+/*img {
+    padding: 7px;
+    width: 100%;
+    height: 70%;
+}*/
+
+
+/*#article {
+    width: 375px;
+    height: 235px;
+    float: left;
+    padding: 10px
+}*/
+
+
+/*#article:nth-child(3):after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}*/
+
+
+/*vince end*/
 
 .footer {
     padding-top: 10px;
