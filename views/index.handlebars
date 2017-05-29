@@ -2,7 +2,7 @@
 <div class="container">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                {{!--<div class="col-md-12">
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="#">Logo</a>
@@ -14,14 +14,15 @@
                             <a href="#">SignUp/Login</a>
                         </li>
                     </ul>
-                </div>
+                </div>--}}
 
    
             {{#each articles}}                        
                         <div id = "article">
+                            <a href= "{{this.url}}" target="_blank">
                                 <img src= "{{this.image_url}}">
-                                
-                                <a href= "{{this.url}}"> <p>{{this.description}}</p> </a>
+                                <p>{{this.description}}</p> 
+                            </a>
                         </div> 
               {{/each}}   
 
