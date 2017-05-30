@@ -177,29 +177,28 @@ router.get("/", function(req, res) {
 }); //Elmas end
 
 router.get("/users/:id", function(req, res) {
-    db.Article.findAll({
-        where: {
-            id: req.params.id
-            // category: "profile"
-        }
-    }).then(function(dbUser) {
-        res.json(dbUser);
-        // var likes = [
-        //     { id: 2, url: "http://ew.com/movies/2017/05/29/robert-de-niro-us-tragic-dumbass-comedy/", description: "Robert De Niro says U.S. has become a ‘tragic dumbass comedy’" },
-        //     { id: 3, url: "http://ew.com/music/2017/05/29/john-legend-message-manchester-attack-parents/", description: "John Legend sends emotional message to Manchester victim’s parents" },
-        //     { id: 4, url: "http://www.si.com/tech-media/2017/05/29/frank-deford-death-legendary-sports-writer", description: "Frank Deford, legendary sports writer, dies at 78" },
-        //     { id: 5, url: "http://ew.com/movies/2017/05/29/clueless-reunion-alicia-silverstone-breckin-meyer/", description: "Alicia Silverstone, Breckin Meyer hold mini Clueless reunion" },
-        // ]
-
-        // var hbsObject = {
-        //     id: 1,
-        //     name: " Beyonce",
-        //     email: " abc@aol.com",
-        //     likes: likes,
-        //     likesCount: likes.length
-        // }
-        // res.render("profile_elmas", hbsObject);
-    });
+   db.User.findOne({
+       where: {
+           id: req.params.id
+       }
+   }).then(function(dbUser) {
+       // var likes = [
+       //     { id: 2, url: "http://ew.com/movies/2017/05/29/robert-de-niro-us-tragic-dumbass-comedy/", description: "Robert De Niro says U.S. has become a ‘tragic dumbass comedy’" },
+       //     { id: 3, url: "http://ew.com/music/2017/05/29/john-legend-message-manchester-attack-parents/", description: "John Legend sends emotional message to Manchester victim’s parents" },
+       //     { id: 4, url: "http://www.si.com/tech-media/2017/05/29/frank-deford-death-legendary-sports-writer", description: "Frank Deford, legendary sports writer, dies at 78" },
+       //     { id: 5, url: "http://ew.com/movies/2017/05/29/clueless-reunion-alicia-silverstone-breckin-meyer/", description: "Alicia Silverstone, Breckin Meyer hold mini Clueless reunion" },
+       // ]        
+       var hbsObject = {
+           id: req.params.id,
+           // name: " Beyonce",
+           email_address: req.params.email_address,
+           picture: req.params.picture,
+           users: dbUsers
+               // likes: likes,
+               // likesCount: likes.length
+       }
+       res.render("profile_elmas", hbsObject);
+   });
 });
 
 router.get("/users/", function(req, res) {
