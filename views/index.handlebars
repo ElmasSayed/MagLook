@@ -1,8 +1,9 @@
 
 <div class="container">
         <div class="container-fluid">
+            <div class="row subject-page-title">{{pageTitle}}</div>
             <div class="row">
-                <div class="col-md-12">
+                {{!--<div class="col-md-12">
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="#">Logo</a>
@@ -14,14 +15,25 @@
                             <a href="#">SignUp/Login</a>
                         </li>
                     </ul>
-                </div>
+                </div>--}}
 
    
-            {{#each articles}}                        
-                        <div id = "article">
-                                <img src= "{{this.image_url}}">
-                                
-                                <a href= "{{this.url}}"> <p>{{this.description}}</p> </a>
+            {{#each articles}}     
+
+
+
+                        <div id="article" class="subject-article-box">
+                            <a href= "{{this.url}}" target="_blank" class="subject-article-link">
+                                <img src= "{{this.image_url}}" class="subject-article-img">
+                                <p class="subject-article-description">{{this.description}}</p> 
+                            </a>
+                           <!--  <form action="/users/:id" method="POST"> -->
+                            <div class="subject-article-like-box"  >
+                                <a href="/users/{{:id}}">
+                                    <img class="subject-article-like" src="http://www.freeiconspng.com/uploads/heart-png-15.png"/>
+                                </a>
+                            </div> 
+                           <!--  </form>  -->
                         </div> 
               {{/each}}   
 

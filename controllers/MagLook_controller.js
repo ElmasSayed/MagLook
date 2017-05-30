@@ -22,20 +22,21 @@ router.get("/celebrities", function(req, res) {
     // console.log(res);
 
     db.Article.findAll({
-          where: {
+        where: {
             category: "celebrities"
-          }
+        }
     }).then(function(dbArticle) {
-      // console.log(dbArticle)
-    var hbsObject = {
-      articles: dbArticle
-    };      
-      // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Celebrities </h1>");
-      res.render("index", hbsObject);
+        // console.log(dbArticle)
+        var hbsObject = {
+            pageTitle: "Celebrities",
+            articles: dbArticle
+        };
+        // We have access to the todos as an argument inside of the callback function
+        // res.send("<h1> Celebrities </h1>");
+        res.render("index", hbsObject);
     });
 
-});   
+});
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/news", function(req, res) {
@@ -43,20 +44,21 @@ router.get("/news", function(req, res) {
     // console.log(res);
 
     db.Article.findAll({
-          where: {
+        where: {
             category: "news"
-          }
+        }
     }).then(function(dbArticle) {
-      // console.log(dbArticle)
-    var hbsObject = {
-      articles: dbArticle
-    };      
-      // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> News </h1>");      
-      res.render("index", hbsObject);
+        // console.log(dbArticle)
+        var hbsObject = {
+            pageTitle: "News",
+            articles: dbArticle
+        };
+        // We have access to the todos as an argument inside of the callback function
+        // res.send("<h1> News </h1>");
+        res.render("index", hbsObject);
     });
 
-});  
+});
 
 
 // Create all our routes and set up logic within those routes where required.
@@ -65,17 +67,18 @@ router.get("/sports", function(req, res) {
     // console.log(res);
 
     db.Article.findAll({
-          where: {
+        where: {
             category: "sports"
-          }
+        }
     }).then(function(dbArticle) {
-      // console.log(dbArticle)
-    var hbsObject = {
-      articles: dbArticle
-    };      
-      // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Sports </h1>");      
-      res.render("index", hbsObject);
+        // console.log(dbArticle)
+        var hbsObject = {
+            pageTitle: "Sports",
+            articles: dbArticle
+        };
+        // We have access to the todos as an argument inside of the callback function
+        //res.send("<h1> Sports </h1>");
+        res.render("index", hbsObject);
     });
 
 });
@@ -87,17 +90,18 @@ router.get("/tech", function(req, res) {
     // console.log(res);
 
     db.Article.findAll({
-          where: {
+        where: {
             category: "technology"
-          }
+        }
     }).then(function(dbArticle) {
-      // console.log(dbArticle)
-    var hbsObject = {
-      articles: dbArticle
-    };      
-      // We have access to the todos as an argument inside of the callback function
-      res.send("<h1> Technology </h1>");
-      res.render("index", hbsObject);
+        // console.log(dbArticle)
+        var hbsObject = {
+            pageTitle: "Technology",
+            articles: dbArticle
+        };
+        // We have access to the todos as an argument inside of the callback function
+        // res.send("<h1> Technology </h1>");
+        res.render("index", hbsObject);
 
     });
 
@@ -108,17 +112,115 @@ router.post("/", function(req, res) {
     // console.log(req);
     // console.log(res);
     db.User.create({
-      email_address: req.body.email_address,
-      password: req.body.password,
-      picture: req.body.picture 
+        email_address: req.body.email_address,
+        password: req.body.password,
+        picture: req.body.picture
     }).then(function(dbUser) {
 
-    res.redirect("/");
-    
-    });      
+        res.redirect("/");
+
+    });
 
 
 });
+
+// Elmas
+// create homepage with its data .
+router.get("/", function(req, res) {
+    // console.log(req);
+    // console.log(res);
+    var hbsObject = { techArticles: [], newsArticles: [], celebArticles: [], sportArticles: [] };
+    db.Article.findAll({
+        where: {
+            category: "technology"
+        },
+        limit: 2
+    }).then(function(data1) {
+
+        hbsObject.techArticles = data1;
+
+        db.Article.findAll({
+            where: {
+                category: "news"
+            },
+            limit: 2
+        }).then(function(data2) {
+
+            hbsObject.newsArticles = data2
+
+            db.Article.findAll({
+                where: {
+                    category: "celebrities"
+                },
+                limit: 2
+            }).then(function(data3) {
+
+                hbsObject.celebArticles = data3
+
+                db.Article.findAll({
+                    where: {
+                        category: "sports"
+                    },
+                    limit: 2
+                }).then(function(data4) {
+
+                    hbsObject.sportArticles = data4
+
+                    // We have access to the todos as an argument inside of the callback function
+                    console.log("loding home - technology");
+                    console.log(hbsObject);
+                    res.render("home", hbsObject);
+                })
+
+            })
+
+        })
+    })
+}); //Elmas end
+
+router.get("/users/:id", function(req, res) {
+    db.Like.findAll({
+        where: {
+            id: req.params.id
+        }
+    }).then(function(dbUser) {
+        res.json(dbUser);
+
+
+}); 
+});
+
+router.get("/users/", function(req, res) {
+    db.User.findAll({
+    }).then(function(dbUser) {
+        res.json(dbUser);
+
+
+}); 
+});
+
+
+router.get("/articles/", function(req, res) {
+    // console.log(req);
+    // console.log(res);
+
+    db.Article.findAll({
+
+    }).then(function(dbArticle) {
+        // console.log(dbArticle)
+        // var hbsObject = {
+        //     pageTitle: "AllArticles",
+        //     articles: dbArticle
+        // };
+        // // We have access to the todos as an argument inside of the callback function
+        // //res.send("<h1> Sports </h1>");
+        // res.render("index", hbsObject);
+         res.send(dbArticle);
+
+    });
+
+});
+
 
 
 // Export routes for server.js to use.

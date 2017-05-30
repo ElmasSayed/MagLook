@@ -5,9 +5,19 @@ var path = require("path");
 
 var helpers = require('handlebars-helpers')();
 module.exports = function(app) {
-	  app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/profile.html"));
-  });
+	  app.post("/users/:id", function(req, res) {
+ console.log(req.body);
+    // console.log(res);
+    db.Like.create({
+    	
+    })
+    .then(function() {
+    res.redirect("/users/:id");
+    
+    });      
+
+
+});
 
 
 	  

@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     } ,
     picture: {
       type: DataTypes.TEXT,
-      len: [1]
     }
   },
     {
@@ -22,11 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           // An Article (foreignKey) is required or a Post can't be made
-          User.belongsTo(models.Like, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
+          User.belongsTo(models.Like);
         }
       }
     }
