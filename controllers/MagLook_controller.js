@@ -191,6 +191,7 @@ router.get("/users/:id", function(req, res) {
        var hbsObject = {
            id: req.params.id,
            // name: " Beyonce",
+           name: req.params.name,
            email_address: req.params.email_address,
            picture: req.params.picture,
            users: dbUser
