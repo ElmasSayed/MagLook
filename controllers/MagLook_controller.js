@@ -193,7 +193,7 @@ router.get("/users/:id", function(req, res) {
            // name: " Beyonce",
            email_address: req.params.email_address,
            picture: req.params.picture,
-           users: dbUsers
+           users: dbUser
                // likes: likes,
                // likesCount: likes.length
        }
