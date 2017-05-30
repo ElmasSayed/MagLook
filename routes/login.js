@@ -8,7 +8,7 @@ module.exports = function(app) {
   // });
 
 app.post("/users/", function(req, res) {
- console.log("\n\n\n\n Clicked like button" + req.body);
+ // console.log("\n\n\n\n Clicked like button" + req.body);
 
     // console.log(res);
     db.User.create({	
