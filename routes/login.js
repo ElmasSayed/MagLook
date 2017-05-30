@@ -7,8 +7,8 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname + "/../public/login.html"));
   // });
 
-	  app.post("/users/", function(req, res) {
- console.log(req.body);
+app.post("/users/", function(req, res) {
+ console.log("\n\n\n\n Clicked like button" + req.body);
 
     // console.log(res);
     db.User.create({	
