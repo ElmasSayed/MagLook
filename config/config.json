@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "humzas",
+        "password": "Mudiay#0",
         "database": "SequelizedMagLookExample",
         "host": "127.0.0.1",
         "dialect": "mysql"

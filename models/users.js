@@ -22,14 +22,14 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           // An Article (foreignKey) is required or a Post can't be made
-          User.belongsTo(models.Like, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
+          User.belongsTo(models.Like)
+            // , {
+            // foreignKey: {
+            //   allowNull: false
+            // }
+          }
         }
       }
-    }
   );
   return User;
 };
