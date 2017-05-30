@@ -1,6 +1,11 @@
 .body {
-    /*background-color:red;*/
-    background-color: #141414;
+    /*background-color: #141414;*/
+    background: #080808;
+    background: -webkit-linear-gradient(left, #080808, #2e1e1e);
+    background: -moz-linear-gradient(left, #080808, #2e1e1e);
+    background: -ms-linear-gradient(left, #080808, #2e1e1e);
+    background: -o-linear-gradient(left, #080808, #2e1e1e);
+    background: linear-gradient(to right, #080808, #2e1e1e);
     font-family: sans-serif, serif;
     color: white;
 }
@@ -44,15 +49,11 @@
 }
 
 .category-title {
-    color: #bbbbbb;
+    color: #d3d3d3;
     font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-
-/*.links {
-    padding-top:40px;
-    color: black;
-}*/
 
 .article {
     width: 250px;
@@ -67,8 +68,7 @@
 .article-box {
     border: solid;
     border-color: #c0c0c0;
-    /*box-shadow: 3px 3px 3px #dadada;*/
-    border-width: .5px;
+    border-width: .25px;
     border-radius: 5px;
     margin-bottom: 30px;
 }
@@ -98,17 +98,17 @@
 
 .article-like-box {
     width: 100%;
+    text-align: right;
     position: relative;
     top: 0;
     left: 0;
-    text-align: right;
+    margin-top: -70px;
 }
 
 .article-like {
     margin-top: 10px;
-    height: 20px;
-    width: 20px;
-    opacity: .4;
+    height: 15px;
+    width: 16px;
 }
 
 .find-more {
@@ -122,14 +122,15 @@
 
 .subject-page-title {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 5px;
+    color: #d3d3d3;
 }
 
 .subject-article-box {
     border: solid;
     border-color: #c0c0c0;
-    border-width: .5px;
+    border-width: .25px;
     border-radius: 5px;
     margin-bottom: 30px;
     margin-left: 25px;
@@ -162,32 +163,31 @@
     top: 0;
     left: 0;
     text-align: right;
+    margin-top: 0px;
 }
 
 .subject-article-like {
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    height: 20px;
-    width: 20px;
-    opacity: .4;
+    height: 16px;
+    width: 18px;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-style: bold;
+    background-color: gray;
+    color: yellow;
+    text-align: center;
 }
 
 
 /*
-.subject-article-like {
-    margin-top: 10px;
-    height: 20px;
-    width: 20px;
-    opacity: .4;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    text-align: right;
-}*/
-
-
 /*vince-subject page*/
 
 
@@ -216,16 +216,3 @@
 
 
 /*vince end*/
-
-.footer {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    /* height: 30px;*/
-    font-size: 20px;
-    font-style: bold;
-    background-color: gray;
-    color: yellow;
-    text-align: center;
-}

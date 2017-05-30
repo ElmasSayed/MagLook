@@ -1,4 +1,3 @@
-
 var express = require("express");
 
 var router = express.Router();
@@ -17,143 +16,140 @@ module.exports = function(app) {
 
 
 
-        newsapi.articles({
-            source: 'entertainment-weekly', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+    newsapi.articles({
+        source: 'entertainment-weekly', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "celebrities";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "celebrities";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
+
+
+    });
+
+    newsapi.articles({
+        source: 'mtv-news', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
+
+
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "celebrities";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
 
     });
 
-        newsapi.articles({
-            source: 'mtv-news', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+    newsapi.articles({
+        source: 'cnn', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "celebrities";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
-
-
-    });        
-
-        newsapi.articles({
-            source: 'cnn', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
-
-
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "news";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "news";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
 
     });
-        newsapi.articles({
-            source: 'the-new-york-times', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+    newsapi.articles({
+        source: 'the-new-york-times', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "news";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "news";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
 
-    }); 
-        newsapi.articles({
-            source: 'espn', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+    });
+    newsapi.articles({
+        source: 'espn', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "sports";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "sports";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
-    });     
-        newsapi.articles({
-            source: 'fox-sports', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
-
-
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "sports";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
-
-    }); 
-        newsapi.articles({
-            source: 'techcrunch', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+    });
+    newsapi.articles({
+        source: 'fox-sports', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "technology";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "sports";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
-    });    
+    });
+    newsapi.articles({
+        source: 'techcrunch', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
-        newsapi.articles({
-            source: 'engadget', // required 
-            sortBy: 'top' // optional 
-        }).then(articlesResponse => {
-            console.log(articlesResponse);
+
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "technology";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
+
+    });
+
+    newsapi.articles({
+        source: 'engadget', // required 
+        sortBy: 'top' // optional 
+    }).then(articlesResponse => {
+        console.log(articlesResponse);
 
 
-            articlesResponse.articles.forEach(el => {
-                el.image_url = el.urlToImage;
-                el.description = el.title;
-                el.category = "technology";
-            })
-            db.Article.bulkCreate(
-                articlesResponse.articles)
+        articlesResponse.articles.forEach(el => {
+            el.image_url = el.urlToImage;
+            el.description = el.title;
+            el.category = "technology";
+        })
+        db.Article.bulkCreate(
+            articlesResponse.articles)
 
-    });             
-
+    });
 
 };
-
-

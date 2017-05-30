@@ -1,7 +1,5 @@
 var express = require("express");
-
 var router = express.Router();
-
 var db = require("../models");
 var request = require('request');
 var fs = require("fs");
@@ -130,6 +128,8 @@ router.get("/", function(req, res) {
     // console.log(req);
     // console.log(res);
     var hbsObject = { techArticles: [], newsArticles: [], celebArticles: [], sportArticles: [] };
+
+    // ---------------------------------
     db.Article.findAll({
         where: {
             category: "technology"
@@ -139,6 +139,7 @@ router.get("/", function(req, res) {
 
         hbsObject.techArticles = data1;
 
+        // ---------------------------------
         db.Article.findAll({
             where: {
                 category: "news"
@@ -148,6 +149,7 @@ router.get("/", function(req, res) {
 
             hbsObject.newsArticles = data2
 
+            // ---------------------------------
             db.Article.findAll({
                 where: {
                     category: "celebrities"
@@ -157,6 +159,7 @@ router.get("/", function(req, res) {
 
                 hbsObject.celebArticles = data3
 
+                // ---------------------------------
                 db.Article.findAll({
                     where: {
                         category: "sports"
@@ -167,8 +170,8 @@ router.get("/", function(req, res) {
                     hbsObject.sportArticles = data4
 
                     // We have access to the todos as an argument inside of the callback function
-                    console.log("loding home - technology");
-                    console.log(hbsObject);
+                    // console.log("loding home - technology");
+                    // console.log(hbsObject);
                     res.render("home", hbsObject);
                 })
 
@@ -178,5 +181,28 @@ router.get("/", function(req, res) {
     })
 }); //Elmas end
 
-// Export routes for server.js to use.
+router.get("/profile_elmas", function(req, res) {
+    db.Article.findAll({
+        where: {
+            category: "profile"
+        }
+    }).then(function(dbArticle) {
+        var likes = [
+            { id: 2, url: "http://ew.com/movies/2017/05/29/robert-de-niro-us-tragic-dumbass-comedy/", description: "Robert De Niro says U.S. has become a ‘tragic dumbass comedy’" },
+            { id: 3, url: "http://ew.com/music/2017/05/29/john-legend-message-manchester-attack-parents/", description: "John Legend sends emotional message to Manchester victim’s parents" },
+            { id: 4, url: "http://www.si.com/tech-media/2017/05/29/frank-deford-death-legendary-sports-writer", description: "Frank Deford, legendary sports writer, dies at 78" },
+            { id: 5, url: "http://ew.com/movies/2017/05/29/clueless-reunion-alicia-silverstone-breckin-meyer/", description: "Alicia Silverstone, Breckin Meyer hold mini Clueless reunion" },
+        ]
+
+        var hbsObject = {
+            id: 1,
+            name: " Beyonce",
+            email: " abc@aol.com",
+            likes: likes,
+            likesCount: likes.length
+        }
+        res.render("profile_elmas", hbsObject);
+    });
+});
+
 module.exports = router;
