@@ -9,6 +9,7 @@ module.exports = function(app) {
 
 	  app.post("/users/", function(req, res) {
  console.log(req.body);
+
     // console.log(res);
     db.User.create({	
       name: req.body.name,

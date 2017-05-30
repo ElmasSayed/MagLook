@@ -177,11 +177,13 @@ router.get("/", function(req, res) {
 }); //Elmas end
 
 router.get("/users/:id", function(req, res) {
+       //console.log(req.params.id); 
    db.User.findOne({
        where: {
            id: req.params.id
        }
    }).then(function(dbUser) {
+     console.log(dbUser)
        // var likes = [
        //     { id: 2, url: "http://ew.com/movies/2017/05/29/robert-de-niro-us-tragic-dumbass-comedy/", description: "Robert De Niro says U.S. has become a ‘tragic dumbass comedy’" },
        //     { id: 3, url: "http://ew.com/music/2017/05/29/john-legend-message-manchester-attack-parents/", description: "John Legend sends emotional message to Manchester victim’s parents" },
@@ -194,11 +196,11 @@ router.get("/users/:id", function(req, res) {
            name: req.params.name,
            email_address: req.params.email_address,
            picture: req.params.picture,
-           users: dbUser
+           users: dbUser.dataValues
                // likes: likes,
                // likesCount: likes.length
        }
-       res.render("profile_elmas", hbsObject);
+       res.render("profile", hbsObject);
    });
 });
 
