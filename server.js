@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(process.cwd() + "/public"));
 app.use(methodOverride("_method"));
 
-////require("apis.js")(app);
+/////require("apis.js")(app);
 
 require("./routes/apis.js")(app);
 require("./routes/profile.js")(app);
