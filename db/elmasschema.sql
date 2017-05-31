@@ -5,8 +5,10 @@ use SequelizedMagLookExample;
 create table Users 
 (
 	id int auto_increment not null,
+	name varchar(100) not null
 	user_name varchar(100) not null,
 	password varchar(100) not null,
+	picture varchar(500),
 	primary key (id)
 );
 
