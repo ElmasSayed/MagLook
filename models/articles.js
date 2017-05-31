@@ -22,18 +22,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]  
     }
-  });
-  // ,
-  //   {
-  //     // We're saying that we want our Author to have Posts
-  //     classMethods: {
-  //       associate: function(models) {
-  //         // An Article (foreignKey) is required or a Post can't be made
-  //         Article.belongsTo(models.Like);
-  //       }
-  //     }
-  //   }
-  // );
+  },
+    {
+      // We're saying that we want our Author to have Posts
+      classMethods: {
+        associate: function(models) {
+          // An Article (foreignKey) is required or a Post can't be made
+          Article.belongsTo(models.Like);
+        }
+      }
+    }
+  );
   return Article;
 };
 
